@@ -1,0 +1,33 @@
+testinfo:
+    - id: cm001
+      title: 新增终端门店
+      execute: 1
+testcase:
+    -
+      element_info: 客户
+      find_type: text
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/cm_topbar_tv_right
+      find_type: id
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/custview_id_singletv_inputtext
+      find_type: ids
+      operate_type: send_keys
+      send_content: auto0205
+      index: 0
+    -
+      element_info:
+      find_type:
+      operate_type: swipe_up
+      times: 1
+    -
+      element_info: 提交
+      find_type: text
+      operate_type: click
+    -
+      element_info:
+      find_type:
+      operate_type: back
+      times: 1

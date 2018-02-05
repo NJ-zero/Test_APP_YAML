@@ -1,0 +1,33 @@
+testinfo:
+    - id: cm002
+      title: 客户排序方式切换
+      execute: 1
+testcase:
+    -
+      element_info: 客户
+      find_type: text
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/cmcrc_id_sort
+      find_type: id
+      operate_type: click
+    -
+      element_info: 拜访时间倒序排列
+      find_type: text
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/cmcrc_id_sort
+      find_type: id
+      operate_type: click
+    -
+      element_info: 创建时间倒序排列
+      find_type: text
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/cmcrc_id_sort
+      find_type: id
+      operate_type: click
+    -
+      element_info: 名称拼音排序
+      find_type: text
+      operate_type: click
