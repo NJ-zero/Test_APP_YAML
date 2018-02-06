@@ -17,7 +17,9 @@ class Operate:
         element_info：定位元素信息
         find_type：属性，id、xpath、text、ids
         operate_type: click、sendkeys、back、swipe_up 为back就是返回，暂时就三种
-        上面三个必填，operate_type必填
+
+        上面三个必填，operate_type必填!!!!!!
+
         send_content：send_keys 时用到
         index：ids时用到
         times:
