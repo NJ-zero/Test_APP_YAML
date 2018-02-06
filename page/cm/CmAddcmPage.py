@@ -28,6 +28,7 @@ class AddcmPage:
         self.operate.back_home()
 
 
+# 测试用 忽略
 # from public.GetDriver import mydriver
 # driver = mydriver()
 #
