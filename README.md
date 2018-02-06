@@ -1,5 +1,12 @@
 ## Test_APP_YAML
-appium的UI测试，数据与用例分离，实现yaml管理用例
+appium的UI测试，数据与用例分离，实现yaml管理用例  
+
+结构介绍，可见[简书](https://www.jianshu.com/p/00aff8435a92)
+
+#### 环境说明
+- windows
+- appium 1.6
+- python2.7
 
 #### 结构介绍
 整体结果如图所示：
