@@ -2,6 +2,9 @@
 #author='Shichao-Dong'
 
 from selenium.webdriver.support.ui import WebDriverWait
+from appium.webdriver.webelement import WebElement
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.by import By
 from logs import log
 import os
 import time
@@ -11,7 +14,7 @@ import time
 一些基础操作：滑动、截图、点击页面元素等
 '''
 
-
+log = log()
 # driver = GetDriver.mydriver()
 
 class BaseOperate:
@@ -93,7 +96,7 @@ class BaseOperate:
             return element
         except:
             self.screenshot()
-            log.error('未定位到元素：'+'%s')%(name)
+            log.error('未定位到元素：'+'%s'%(name))
 
     def get_id(self,id):
         '''
@@ -102,13 +105,13 @@ class BaseOperate:
         :return:
         '''
         try:
-            element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_id(id))
+            element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_id(id()))
             # element = self.driver.find_element_by_id(id)
             self.driver.implicitly_wait(2)
             return element
         except:
             self.screenshot()
-            log.error('未定位到元素：'+'%s')%(id)
+            log.error('未定位到元素：'+'%s'%(id))
 
     def get_xpath(self,xpath):
         '''
@@ -123,7 +126,7 @@ class BaseOperate:
             return element
         except:
             self.screenshot()
-            log.error('未定位到元素：'+'%s')%(xpath)
+            log.error('未定位到元素：'+'%s'%(xpath))
 
     def get_ids(self,id):
         '''
@@ -138,7 +141,7 @@ class BaseOperate:
             return elements
         except:
             self.screenshot()
-            log.error('未定位到元素：'+'%s')%(id)
+            log.error('未定位到元素：'+'%s'%(id))
 
     def page(self,name):
         '''
