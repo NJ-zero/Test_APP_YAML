@@ -28,7 +28,8 @@ def mydriver():
     desired_caps = {
                 'platformName':platformName,'deviceName':deviceName, 'platformVersion':platformVersion,
                 'appPackage':appPackage,'appActivity':appActivity,
-                'unicodeKeyboard':True,'resetKeyboard':True,'noReset':True
+                'unicodeKeyboard':True,'resetKeyboard':True,'noReset':True,
+                'newCommandTimeout':180
                 }
     try:
         driver = webdriver.Remote('http://127.0.0.1:%s/wd/hub'%appium_port,desired_caps)
