@@ -49,7 +49,7 @@ class BaseOperate:
         PATH = lambda p: os.path.abspath(
             os.path.join(os.path.dirname(__file__), p)
         )
-        screenshoot_path = PATH('../results/screenshoot/')
+        screenshoot_path = PATH('../results/screenshoot/failpic')
         self.driver.get_screenshot_as_file(screenshoot_path+now+'.png')
 
     def find_id(self,id):
