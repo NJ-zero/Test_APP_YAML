@@ -28,6 +28,7 @@ class Operate:
 
         for i in range(self.yaml.caselen()):
             if self.yaml.get_operate_type(i) == 'click':
+                self.driver.implicitly_wait(3)
                 if self.yaml.get_findtype(i) == 'text':
                     self.baseoperate.get_name(self.yaml.get_elementinfo(i)).click()
                 elif self.yaml.get_findtype(i) == 'id':
@@ -38,6 +39,7 @@ class Operate:
                     self.baseoperate.get_ids(self.yaml.get_elementinfo(i))[self.yaml.get_index(i)].click()
 
             elif self.yaml.get_operate_type(i) == 'send_keys':
+                self.driver.implicitly_wait(3)
                 if self.yaml.get_findtype(i) == 'text':
                     self.baseoperate.get_name(self.yaml.get_elementinfo(i)).send_keys(self.yaml.get_send_content(i))
                 elif self.yaml.get_findtype(i) == 'id':
