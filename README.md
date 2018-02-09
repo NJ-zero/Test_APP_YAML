@@ -5,9 +5,24 @@ appium的UI测试，数据与用例分离，实现yaml管理用例
 
 #### 环境说明
 - windows
-- appium 1.6
+- appium 1.4(后来升级到1.6.4也没有问题)
 - python2.7
 
+#### yaml用例编写说明
+````
+testinfo:
+    - id: cm001   
+      title: 新增终端门店
+      execute: 1          ----主要是用例名称，目前这三个参数没有用到，只是阅读方便
+testcase:
+    -
+      element_info: 客户、com.fiberhome.waiqin365.client:id/cm_topbar_tv_right（来自Uiautomator识别出来）
+      find_type:  text  id  xpath  ids
+      operate_type: click、sendkeys、swipe_up、back        
+      index: 0  find_type为ids时用到索引
+      times： 上滑或者返回时用到
+           
+ ````          
 #### 结构介绍
 整体结果如图所示：
 
@@ -21,3 +36,13 @@ appium的UI测试，数据与用例分离，实现yaml管理用例
 - testyaml 存放yaml文件
 - HTMLTestRunner.py 生成报告用
 - runtest.py 运行所有测试用例用
+
+#### 第一次优化
+- 增加发送邮件功能
+    - readconfig增加读取email参数方方法
+    - config.ini增加邮件相关参数
+    - Sendemail.py  新增发送邮件公共方法
+    - runtest.py 增加发送邮件方法
+- 修复bug
+    - BaseOperate.py 中未定位到元素error日志显示问题，%s 加错位置
+    - 失败截图，路径修改，screenshoot后加上filapic，要不然会直接生成在reults目录下
