@@ -24,3 +24,7 @@ class Readconfig:
     def getcmdValue(self,name):
         value = self.conf.get('cmd',name)
         return value
+
+    def getemailValue(self,name):
+        value = self.conf.get('email',name)
+        return value
