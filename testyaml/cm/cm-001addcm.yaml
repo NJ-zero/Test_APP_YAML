@@ -15,7 +15,7 @@ testcase:
       element_info: com.fiberhome.waiqin365.client:id/custview_id_singletv_inputtext
       find_type: ids
       operate_type: send_keys
-      send_content: auto0205
+      send_content: auto020512
       index: 0
     -
       element_info:
@@ -26,6 +26,10 @@ testcase:
       element_info: 提交
       find_type: text
       operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/cm_topbar_tv_right
+      find_type: id
+      operate_type: check
     -
       element_info:
       find_type:
