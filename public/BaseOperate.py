@@ -64,6 +64,7 @@ class BaseOperate:
         if exsit :
             return True
         else:
+            log.error('未定位到元素：'+'%s'%(id))
             return False
 
     def find_name(self,name):
@@ -77,6 +78,7 @@ class BaseOperate:
         if exsit :
             return True
         else:
+            log.error('未定位到元素：'+'%s'%(name))
             return False
 
     def get_name(self,name):
