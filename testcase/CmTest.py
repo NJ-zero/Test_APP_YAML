@@ -8,12 +8,21 @@ from page.cm.CmSortcmPage import SortcmPage
 
 
 from public.GetDriver import mydriver
-driver = mydriver()
-
+from public.StartAppiumServer import Sp
 import unittest,time
 
+driver = mydriver()
+appiumserver = Sp(driver)
 
 class Cm(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        pass
+
+    @classmethod
+    def tearDownClass(cls):
+        pass
 
     def test_001addcm(self):
         '''
@@ -34,6 +43,7 @@ class Cm(unittest.TestCase):
 
     def test_999close(self):
         driver.quit()
+        appiumserver.stop_appium()
         time.sleep(10)
 
 if __name__ == "__main__":
