@@ -1,0 +1,33 @@
+testinfo:
+    - id: pd001
+      title: 搜索商品
+      execute: 1
+testcase:
+    -
+      element_info: 商品
+      find_type: text
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/rlSearch
+      find_type: id
+      operate_type: click
+    -
+      element_info: com.fiberhome.waiqin365.client:id/et_searchtext
+      find_type: id
+      operate_type: send_keys
+      send_content: 1
+    -
+      element_info: com.fiberhome.waiqin365.client:id/tvProductName
+      find_type: ids
+      operate_type: click
+      index: 0
+    -
+      element_info: 商品详情
+      find_type: text
+      operate_type: check
+    -
+      element_info:
+      find_type:
+      operate_type: back
+      times: 3
+
