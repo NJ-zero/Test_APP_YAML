@@ -17,7 +17,7 @@ class Operate:
         element_info：定位元素信息
         find_type：属性，id、xpath、text、ids
         operate_type: click、sendkeys、back、swipe_up 为back就是返回，暂时就三种
-
+                    增加check  用于校验
         上面三个必填，operate_type必填!!!!!!
 
         send_content：send_keys 时用到
@@ -56,6 +56,19 @@ class Operate:
             elif self.yaml.get_operate_type(i) == 'swipe_up':
                 for n in range(self.yaml.get_backtimes(i)):
                     self.baseoperate.swipe_up()
+
+            elif self.yaml.get_operate_type(i) == 'check':
+                self.driver.implicitly_wait(3)
+                if self.yaml.get_findtype(i) == 'text':
+                    if self.baseoperate.find_name(self.yaml.get_elementinfo(i)):
+                        pass
+                    else:
+                        self.baseoperate.page('工作台')
+                elif self.yaml.get_findtype(i) == 'id':
+                    if self.baseoperate.find_id(self.yaml.get_elementinfo(i)):
+                        pass
+                    else:
+                        self.baseoperate.page('工作台')
 
 
     def back_home(self):
