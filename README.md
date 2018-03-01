@@ -18,7 +18,7 @@ testcase:
     -
       element_info: 客户、com.fiberhome.waiqin365.client:id/cm_topbar_tv_right（来自Uiautomator识别出来）
       find_type:  text  id  xpath  ids
-      operate_type: click、sendkeys、swipe_up、back        
+      operate_type: click、sendkeys、swipe_up、back、check        
       index: 0  find_type为ids时用到索引
       times： 上滑或者返回时用到
            
@@ -46,3 +46,8 @@ testcase:
 - 修复bug
     - BaseOperate.py 中未定位到元素error日志显示问题，%s 加错位置
     - 失败截图，路径修改，screenshoot后加上filapic，要不然会直接生成在reults目录下
+#### 0301第二次优化
+- yaml文件operate_type增加check，用于校验
+- 优化了定位元素的方法，增加等待时间
+- BaseOperate.py 文件中，增加check的分支
+- 判断元素是否存在，不存在时增加截图和日志
