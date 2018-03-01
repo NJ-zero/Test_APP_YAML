@@ -60,11 +60,12 @@ class BaseOperate:
         寻找元素
         :return:
         '''
-        exsit = self.driver.find_element_by_id(id)
-        if exsit :
+        try:
+            exsit = self.driver.find_element_by_id(id)
             return True
-        else:
+        except:
             log.error('未定位到元素：'+'%s'%(id))
+            self.screenshot()
             return False
 
     def find_name(self,name):
@@ -74,11 +75,12 @@ class BaseOperate:
         :return:
         '''
         findname = "//*[@text='%s']"%(name)
-        exsit = self.driver.find_element_by_xpath(findname)
-        if exsit :
+        try:
+            exsit = self.driver.find_element_by_xpath(findname)
             return True
-        else:
+        except:
             log.error('未定位到元素：'+'%s'%(name))
+            self.screenshot()
             return False
 
     def get_name(self,name):
@@ -92,9 +94,11 @@ class BaseOperate:
 
         findname = "//*[@text='%s']"%(name)
         try:
-            element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_xpath(findname))
-            # element = self.driver.find_element_by_xpath(findname)
-            self.driver.implicitly_wait(2)
+            # element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_xpath(findname))
+            WebDriverWait(
+            self.driver, 15).until(
+            lambda driver: driver.find_element_by_xpath(findname).is_displayed())
+            element = self.driver.find_element_by_xpath(findname)
             return element
         except:
             self.screenshot()
@@ -107,9 +111,13 @@ class BaseOperate:
         :return:
         '''
         try:
-            element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_id(id()))
-            # element = self.driver.find_element_by_id(id)
+            # element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_id(id()))
+
+            WebDriverWait(
+            self.driver, 15).until(
+            lambda driver: driver.find_element_by_id(id).is_displayed())
             self.driver.implicitly_wait(2)
+            element = self.driver.find_element_by_id(id)
             return element
         except:
             self.screenshot()
@@ -122,9 +130,11 @@ class BaseOperate:
         :return:
         '''
         try:
-            element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_xpath(xpath))
-            # element = self.driver.find_element_by_xpath(xpath)
-            self.driver.implicitly_wait(2)
+            # element = WebDriverWait(self.driver, 10).until(lambda x: x.find_element_by_xpath(xpath))
+            WebDriverWait(
+            self.driver, 15).until(
+            lambda driver: driver.find_element_by_xpath(xpath).is_displayed())
+            element = self.driver.find_element_by_xpath(xpath)
             return element
         except:
             self.screenshot()
