@@ -79,11 +79,11 @@ class Operate:
         self.baseoperate.page('工作台')
 
 
-
-# import GetDriver
-# driver = GetDriver.mydriver()
-# path = "../testyaml/cm/cm-001addcm.yaml"
+# if __name__ == "__main__":
+#     import GetDriver
+#     driver = GetDriver.mydriver()
+#     path = "../testyaml/cm/cm-001addcm.yaml"
 #
-# cm = Operate(path,driver)
-# cm.check_operate_type()
-# cm.back_home()
+#     cm = Operate(path,driver)
+#     cm.check_operate_type()
+#     cm.back_home()
